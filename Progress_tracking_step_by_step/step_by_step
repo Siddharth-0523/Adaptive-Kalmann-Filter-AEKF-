@@ -1,0 +1,232 @@
+# Project Development Roadmap
+
+## Phase 1 – Research & Planning
+
+**Objective:** Define the project scope and finalize the system architecture.
+
+* Define the project objectives.
+* Review literature on sensorless BLDC motor control.
+* Study Kalman Filter and Adaptive Kalman Filter theory.
+* Understand BLDC motor operation and commutation.
+* Select the control strategy.
+* Freeze the hardware architecture.
+* Create the system block diagram.
+* Create the project repository and documentation.
+
+**Deliverables**
+
+* Project specification
+* System architecture
+* Initial documentation
+
+---
+
+# Phase 2 – Hardware Selection
+
+**Objective:** Select all hardware components required for the project.
+
+* Select STM32 microcontroller.
+* Select BLDC motor.
+* Select gate driver ICs.
+* Select MOSFETs.
+* Select current sensing method.
+* Select voltage sensing method.
+* Select power supply.
+* Prepare Bill of Materials (BOM).
+
+**Deliverables**
+
+* Finalized hardware list
+* Component datasheets
+* Cost estimation
+
+---
+
+# Phase 3 – Inverter Design
+
+**Objective:** Design and build a three-phase inverter.
+
+* Study three-phase inverter topology.
+* Design one half-bridge.
+* Design gate driver circuits.
+* Design bootstrap circuitry.
+* Select gate resistors.
+* Select DC bus capacitors.
+* Build inverter on perfboard.
+* Perform continuity and safety checks.
+
+**Deliverables**
+
+* Working inverter hardware
+* Wiring documentation
+
+---
+
+# Phase 4 – Power Stage Testing
+
+**Objective:** Verify the inverter before connecting the motor.
+
+* Verify gate driver operation.
+* Verify PWM output.
+* Test one MOSFET.
+* Test one half-bridge.
+* Test complete inverter.
+* Verify dead-time operation.
+* Test with a low-voltage supply.
+
+**Deliverables**
+
+* Functional inverter
+* Oscilloscope verification
+
+---
+
+# Phase 5 – Sensor Integration
+
+**Objective:** Integrate current and voltage sensing.
+
+* Install current sensors.
+* Install voltage sensing circuit.
+* Interface sensors with STM32 ADC.
+* Calibrate ADC readings.
+* Validate sensor measurements.
+
+**Deliverables**
+
+* Stable current measurements
+* Stable voltage measurements
+
+---
+
+# Phase 6 – STM32 Firmware Development
+
+**Objective:** Develop the embedded firmware.
+
+* Configure STM32CubeMX.
+* Configure GPIO.
+* Configure PWM timers.
+* Configure ADC.
+* Configure interrupts.
+* Configure UART for debugging.
+* Verify PWM generation.
+* Verify ADC acquisition.
+
+**Deliverables**
+
+* Working firmware framework
+
+---
+
+# Phase 7 – Basic Motor Control
+
+**Objective:** Achieve controlled BLDC motor operation.
+
+* Implement six-step commutation.
+* Generate phase PWM.
+* Verify motor rotation.
+* Test different duty cycles.
+* Verify current measurements during operation.
+
+**Deliverables**
+
+* Stable motor operation
+
+---
+
+# Phase 8 – Mathematical Modeling
+
+**Objective:** Develop the mathematical model of the BLDC motor.
+
+* Determine motor parameters.
+* Develop electrical model.
+* Develop mechanical model.
+* Derive state-space equations.
+* Validate the model through simulation.
+
+**Deliverables**
+
+* State-space model
+* Motor parameters
+
+---
+
+# Phase 9 – Standard Kalman Filter
+
+**Objective:** Implement a baseline Kalman Filter.
+
+* Define system states.
+* Define system matrices.
+* Implement prediction step.
+* Implement correction step.
+* Validate estimation accuracy.
+
+**Deliverables**
+
+* Working Kalman Filter
+
+---
+
+# Phase 10 – Adaptive Kalman Filter
+
+**Objective:** Upgrade the estimator.
+
+* Implement adaptive noise covariance estimation.
+* Tune adaptive parameters.
+* Evaluate convergence.
+* Test under varying operating conditions.
+
+**Deliverables**
+
+* Working Adaptive Kalman Filter
+
+---
+
+# Phase 11 – Closed-Loop Sensorless Control
+
+**Objective:** Integrate estimation with motor control.
+
+* Use estimated rotor position for commutation.
+* Eliminate dependence on Hall sensors.
+* Verify sensorless startup.
+* Test under different speeds and loads.
+
+**Deliverables**
+
+* Functional sensorless BLDC control
+
+---
+
+# Phase 12 – Validation & Performance Evaluation
+
+**Objective:** Evaluate system performance.
+
+* Compare estimated and actual rotor position.
+* Evaluate estimation error.
+* Measure computational execution time.
+* Measure CPU utilization.
+* Evaluate robustness to parameter variation.
+* Test repeatability.
+
+**Deliverables**
+
+* Experimental results
+* Performance analysis
+
+---
+
+# Phase 13 – Documentation
+
+**Objective:** Complete project documentation.
+
+* Update GitHub repository.
+* Prepare project report.
+* Create system diagrams.
+* Record demonstration videos.
+* Prepare presentation.
+* Document future work.
+
+**Deliverables**
+
+* Complete project documentation
+* Final report
+* Presentation
